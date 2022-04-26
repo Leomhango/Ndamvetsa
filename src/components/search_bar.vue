@@ -1,12 +1,28 @@
 <template>
-    <form action="" class="w-full">
-        <input type="search" placeholder="Search for a word" name="" id="" class="border-2 border-gray-300 py-2 px-4 rounded-full w-full">
-    </form>
+    <section action="" class="mt-8 w-10/12">
+        <input 
+            v-model="term"
+            @keypress.enter="search(term)"
+            type="search" 
+            placeholder="Search for a word" 
+            name="" id="" 
+            class="bg-blue-50 py-3 px-4 rounded-md w-full outline-blue-500"
+        >
+    </section>
 </template>
 
 <script>
 
 export default {
-    name: "SeachBar"
+    name: "SeachBar",
+
+    props: [
+        'search'
+    ],
+    data() {
+        return {
+            term: ''
+        }
+    }
 }
 </script>
