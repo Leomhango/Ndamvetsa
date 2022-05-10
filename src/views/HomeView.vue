@@ -39,14 +39,15 @@ export default {
       }).then((response) => (this.words = response.data));
     },
     search(term) { 
-      this.resetWord()
+      // this.resetWord()/
       this.words = this.words.filter((words) => {
         return words.word.toLowerCase().includes(term.toLowerCase())
       })
     },
-    resetWord() {
-      this.word = this.getWords()
-    }
+
+    // resetWord() {
+    //   this.word = this.words
+    // }
   },
 };
 </script>
